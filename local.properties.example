@@ -20,3 +20,14 @@ CLOUDINARY_API_SECRET=<api-secret>
 #   http://10.0.2.2:4000/api/   - Android emulator's loopback to this machine's localhost
 #   http://<your-LAN-IP>:4000/api/ - real device on the same WiFi network as your dev server
 # API_BASE_URL=http://10.0.2.2:4000/api/
+
+# Release signing (Play Store) - optional, only needed to build/publish a signed release.
+# Generate with: keytool -genkeypair -v -keystore <path>.jks -alias <alias> -keyalg RSA
+#   -keysize 2048 -validity 10957
+# Store the .jks file OUTSIDE this repo and never commit it or these passwords. Without
+# these, assembleRelease/bundleRelease still runs but produces an UNSIGNED, unpublishable
+# build - debug builds are entirely unaffected either way.
+# RELEASE_STORE_FILE=C\:\path\to\your-release-key.jks
+# RELEASE_STORE_PASSWORD=<store-password>
+# RELEASE_KEY_ALIAS=<key-alias>
+# RELEASE_KEY_PASSWORD=<key-password>

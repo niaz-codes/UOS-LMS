@@ -79,10 +79,33 @@ android {
         )
     }
 
+    // Release signing - only wired up when a real keystore is configured (RELEASE_STORE_FILE
+    // in local.properties, kept outside the repo - never commit a keystore or its passwords).
+    // Anyone else cloning this repo can still build/run the debug variant with zero setup;
+    // only assembleRelease/bundleRelease (which only the app's publisher needs) requires it.
+    val releaseStoreFilePath = localPropertyOrDefault("RELEASE_STORE_FILE", "")
+    val hasReleaseSigning = releaseStoreFilePath.isNotBlank() && file(releaseStoreFilePath).exists()
+    if (!hasReleaseSigning) {
+        println("WARNING: RELEASE_STORE_FILE is not set (or the file doesn't exist) - release/bundle builds will be UNSIGNED and cannot be installed or uploaded to Play Store. See local.properties.example.")
+    }
+    if (hasReleaseSigning) {
+        signingConfigs {
+            create("release") {
+                storeFile = file(releaseStoreFilePath)
+                storePassword = localProperty("RELEASE_STORE_PASSWORD")
+                keyAlias = localProperty("RELEASE_KEY_ALIAS")
+                keyPassword = localProperty("RELEASE_KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             optimization {
                 enable = false
+            }
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.getByName("release")
             }
         }
     }
