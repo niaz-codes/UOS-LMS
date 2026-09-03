@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "785259678009",
+    "firebase_url": "https://uos-lms-ade39-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "uos-lms-ade39",
+    "storage_bucket": "uos-lms-ade39.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785259678009:android:2749835a8eed79ddbdc0e8",
+        "android_client_info": {
+          "package_name": "com.example.uos_lms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRnHiM5AYhuSrEkfU5zbbzpEXdDTRYw0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

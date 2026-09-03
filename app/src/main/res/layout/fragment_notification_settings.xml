@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
+
+    <include android:id="@+id/toolbar" layout="@layout/layout_gradient_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ProgressBar
+            android:id="@+id/progressLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/contentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="32dp">
+
+                <TextView style="@style/SectionHeaderLabel" android:text="@string/settings_section_general" />
+                <include android:id="@+id/rowPushEnabled" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowSoundEnabled" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowVibrationEnabled" layout="@layout/item_toggle_row" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notification_system_settings_hint"
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/buttonSystemSettings"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/open_system_notification_settings" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView style="@style/SectionHeaderLabel" android:text="@string/settings_section_categories" />
+                <include android:id="@+id/rowAccount" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowAcademic" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowAttendance" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowExamResult" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowLeave" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowAnnouncement" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowCalendar" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowMessage" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowPromotion" layout="@layout/item_toggle_row" />
+                <include android:id="@+id/rowSystem" layout="@layout/item_toggle_row" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>

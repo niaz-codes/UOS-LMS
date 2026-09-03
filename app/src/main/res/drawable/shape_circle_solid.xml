@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Plain white filled circle, always used with setBackgroundTintList so callers pick the fill
+     color (and alpha) per instance - the decorative abstract blobs on premium cards, and any
+     other one-off tinted dot/circle. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@android:color/white" />
+</shape>

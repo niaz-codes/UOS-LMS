@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark palette - rebuilt to match UI_UX_Design/'s near-black, high-contrast card aesthetic
+     (was a lighter indigo-tinted dark before). role_*/admin_container/status_* intentionally
+     NOT redefined here - they inherit from values/colors.xml (identical light/dark by design,
+     same as before this redesign), except status_success/warning/info below, which get
+     brightened variants for legibility against near-black. -->
+<resources>
+    <color name="indigo_primary">#FFB8B4FF</color>
+    <color name="on_indigo_primary">#FF2E2578</color>
+    <color name="indigo_primary_container">#FF46399E</color>
+    <color name="on_indigo_primary_container">#FFE4E1FF</color>
+
+    <color name="emerald_secondary">#FF5EEAD4</color>
+    <color name="on_emerald_secondary">#FF003731</color>
+    <color name="emerald_secondary_container">#FF00504A</color>
+    <color name="on_emerald_secondary_container">#FFA6F5E9</color>
+
+    <color name="amber_tertiary">#FFF2B75C</color>
+    <color name="on_amber_tertiary">#FF4A2B00</color>
+    <color name="amber_tertiary_container">#FF6B3F00</color>
+    <color name="on_amber_tertiary_container">#FFFFDDA8</color>
+
+    <color name="error_color">#FFFFB4AB</color>
+    <color name="on_error_color">#FF690005</color>
+    <color name="error_container">#FF93000A</color>
+    <color name="on_error_container">#FFFFDAD6</color>
+
+    <color name="background_color">#FF000000</color>
+    <color name="on_background_color">#FFF5F5F5</color>
+    <color name="surface_color">#FF161616</color>
+    <color name="on_surface_color">#FFF5F5F5</color>
+    <color name="surface_variant_color">#FF272727</color>
+    <color name="on_surface_variant_color">#FFB3B3B3</color>
+    <color name="outline_color">#FF3D3D3D</color>
+
+    <!-- Role "container" pairs, dark variant - a deep tint of the role color rather than the
+         light theme's pale tint, so icon badges keep good contrast against near-black cards. -->
+    <color name="admin_container">#FF3F0E19</color>
+    <color name="on_admin_container">#FFFFB3C6</color>
+    <color name="hod_container">#FF2E1149</color>
+    <color name="on_hod_container">#FFD9B3FF</color>
+    <color name="teacher_container">#FF0E2A54</color>
+    <color name="on_teacher_container">#FFAFCBFF</color>
+    <color name="student_container">#FF0C321A</color>
+    <color name="on_student_container">#FF8FE8AC</color>
+
+    <!-- Brightened for legibility on near-black, matching the reference's dark-mode status text. -->
+    <color name="status_success">#FF4ADE80</color>
+    <color name="status_warning">#FFFBBF24</color>
+    <color name="status_info">#FF60A5FA</color>
+</resources>

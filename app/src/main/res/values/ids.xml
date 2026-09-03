@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Plain id resources used as View.setTag()/getTag() keys (not view ids in any layout) - keeps
+     tag lookups namespaced/collision-free instead of using raw object keys or R.id values that
+     happen to belong to some layout's view. -->
+<resources>
+    <item name="tag_pulse_animator" type="id" />
+</resources>

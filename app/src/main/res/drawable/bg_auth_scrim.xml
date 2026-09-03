@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brand-tint scrim layered over a campus photo (see fragment_login.xml/fragment_register.xml) -
+     same gradient direction/colors as the old bg_auth_gradient, just translucent so the photo
+     shows through while keeping the white auth-screen text legible everywhere it sits. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:type="linear"
+        android:angle="90"
+        android:startColor="#B34F46E5"
+        android:centerColor="#996D28D9"
+        android:endColor="#D97C3AED" />
+</shape>

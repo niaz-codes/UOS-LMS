@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionRefresh"
+        android:icon="@drawable/ic_refresh"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/actionThemeToggle"
+        android:icon="@drawable/ic_light_mode"
+        android:title="@string/action_theme_toggle_title"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/actionAnnouncements"
+        android:icon="@drawable/ic_campaign"
+        android:title="@string/nav_announcements"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/actionNotifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/notifications_title"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/actionLeave"
+        android:icon="@drawable/ic_event_busy"
+        android:title="@string/student_leave_applications_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionMyLeave"
+        android:icon="@drawable/ic_event_busy"
+        android:title="@string/action_my_leave_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionTimetable"
+        android:icon="@drawable/ic_calendar_month"
+        android:title="@string/timetable_my_schedule_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionExamSchedule"
+        android:icon="@drawable/ic_calendar_month"
+        android:title="@string/exam_schedule_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionMessaging"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/messaging_inbox_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionReports"
+        android:icon="@drawable/ic_assessment"
+        android:title="@string/teacher_reports_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionResults"
+        android:icon="@drawable/ic_grade"
+        android:title="@string/teacher_results_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionMyAttendance"
+        android:icon="@drawable/ic_event_available"
+        android:title="@string/my_attendance_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/actionLogout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Colorless radial "glow" halo - a white radial fade meant to be recolored per-card via
+     setBackgroundTintList (SRC_IN tint preserves this alpha falloff shape, just swaps the hue).
+     Sits behind a premium stat card to read as a soft ambient light bleeding out from the card. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="50%p"
+        android:startColor="#59FFFFFF"
+        android:centerColor="#26FFFFFF"
+        android:endColor="#00FFFFFF" />
+</shape>

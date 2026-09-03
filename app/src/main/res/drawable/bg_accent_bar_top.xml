@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Colored top accent bar on a stat card (see UI_UX_Design/ reference) - only the top corners
+     are rounded so it sits flush against the card's own rounded top edge. Tinted per instance
+     at runtime via AccentColors.applyBar(). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/status_info" />
+    <corners
+        android:topLeftRadius="16dp"
+        android:topRightRadius="16dp"
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="0dp" />
+</shape>

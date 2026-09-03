@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        android:title="@string/profile_title"
+        app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge"
+        app:menu="@menu/menu_top_settings" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ProgressBar
+            android:id="@+id/progressLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/contentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="32dp">
+
+                <!-- Header: role-colored gradient (set per-role in code) with soft decorative
+                     glow shapes behind the content, an elevated (real shadow) avatar, and a
+                     glass-style role badge. Extra bottom padding leaves room for the floating
+                     stat row below to overlap its lower edge. -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="-40dp"
+                        android:layout_marginEnd="-30dp"
+                        android:alpha="0.16"
+                        android:background="@drawable/shape_circle_solid"
+                        android:backgroundTint="@color/white" />
+
+                    <View
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="bottom|start"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="36dp"
+                        android:alpha="0.12"
+                        android:background="@drawable/shape_circle_solid"
+                        android:backgroundTint="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/profileHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="32dp"
+                        android:paddingBottom="52dp"
+                        android:paddingHorizontal="24dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="112dp"
+                            android:layout_height="112dp"
+                            app:cardCornerRadius="56dp"
+                            app:cardElevation="10dp"
+                            app:strokeWidth="3dp"
+                            app:strokeColor="@color/white_alpha_22">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/imageAvatar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    app:shapeAppearanceOverlay="@style/ShapeAppearance.UOS_LMS.Circle"
+                                    android:contentDescription="@string/profile_photo_desc" />
+
+                                <FrameLayout
+                                    android:id="@+id/uploadOverlay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/scrim_overlay"
+                                    android:visibility="gone">
+
+                                    <ProgressBar
+                                        style="?android:attr/progressBarStyleSmall"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="center"
+                                        android:indeterminateTint="@color/white" />
+
+                                </FrameLayout>
+
+                                <FrameLayout
+                                    android:id="@+id/cameraBadge"
+                                    android:layout_width="34dp"
+                                    android:layout_height="34dp"
+                                    android:layout_gravity="bottom|end"
+                                    android:background="@drawable/bg_status_icon_circle">
+
+                                    <ImageView
+                                        android:layout_width="18dp"
+                                        android:layout_height="18dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/ic_camera"
+                                        app:tint="?attr/colorPrimary"
+                                        android:contentDescription="@string/change_profile_photo_desc" />
+
+                                </FrameLayout>
+
+                            </FrameLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/textFullName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:textColor="@color/white"
+                            android:textSize="23sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textRole"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="5dp"
+                            android:background="@drawable/bg_role_badge_glass"
+                            android:textColor="@color/white"
+                            android:textSize="11.5sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.08" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonEditPhoto"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:icon="@drawable/ic_camera"
+                                android:text="@string/edit_photo_button" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buttonRemovePhoto"
+                                style="@style/Widget.Material3.Button.TextButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="@string/remove_photo_button"
+                                android:textColor="@color/white"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <!-- Floating stat row - overlaps the header's bottom edge for depth. -->
+                <LinearLayout
+                    android:id="@+id/floatingStatsRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-34dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/statAccountStatus"
+                        layout="@layout/item_premium_overview_card"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+
+                    <include
+                        android:id="@+id/statSecondary"
+                        layout="@layout/item_premium_overview_card"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp" />
+
+                </LinearLayout>
+
+                <!-- Cards -->
+                <LinearLayout
+                    android:id="@+id/cardsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="18dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardPersonal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="8dp">
+
+                                <FrameLayout
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp">
+
+                                    <View
+                                        android:id="@+id/iconBackgroundPersonal"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/bg_status_icon_circle" />
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/ic_person"
+                                        app:tint="@color/white"
+                                        android:contentDescription="@null" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/personal_information_title"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/personalRowsContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAcademic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="1dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="?attr/colorOutlineVariant">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="8dp">
+
+                                <FrameLayout
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp">
+
+                                    <View
+                                        android:id="@+id/iconBackgroundAcademic"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/bg_status_icon_circle" />
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/ic_school"
+                                        app:tint="@color/white"
+                                        android:contentDescription="@null" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/academic_information_title"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/academicRowsContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_bottom_nav_floating"
+        android:elevation="10dp" />
+
+</LinearLayout>

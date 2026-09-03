@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Debug-build only (see app/src/debug/AndroidManifest.xml). Allows plain HTTP so the
+     app can reach a local backend during development (10.0.2.2 emulator loopback, or a
+     LAN IP for real-device testing). Never merged into release builds. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

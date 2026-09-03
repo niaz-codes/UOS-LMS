@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.UOS_LMS.Admin"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        android:title="@string/admin_dashboard_title"
+        app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge"
+        app:menu="@menu/menu_top_logout" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <include
+                android:id="@+id/gradientHeader"
+                layout="@layout/layout_gradient_header_admin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/overview"
+                    android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_input"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_calendar_month"
+                        app:tint="?attr/colorOnSurfaceVariant"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/this_month_label"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/overviewGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/statTotalStudents"
+                        layout="@layout/item_premium_overview_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        android:id="@+id/statTotalTeachers"
+                        layout="@layout/item_premium_overview_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/statTotalHods"
+                        layout="@layout/item_premium_overview_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        android:id="@+id/statTotalDepartments"
+                        layout="@layout/item_premium_overview_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/user_management_title"
+                android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/user_management_subtitle"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <include android:id="@+id/sectionStudents" layout="@layout/item_admin_drilldown_section" />
+
+                <include android:id="@+id/sectionTeachers" layout="@layout/item_admin_drilldown_section"
+                    android:layout_marginTop="10dp" />
+
+                <include android:id="@+id/sectionHods" layout="@layout/item_admin_drilldown_section"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pending_approvals_title"
+                    android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+                <TextView
+                    android:id="@+id/textPendingViewAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:drawableEnd="@drawable/ic_arrow_forward_ios"
+                    android:drawablePadding="4dp"
+                    android:drawableTint="?attr/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:padding="4dp"
+                    android:text="@string/view_all_label"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/pending_approvals_subtitle"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/pendingApprovalsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:layoutAnimation="@anim/layout_animation_fall_down" />
+
+            <TextView
+                android:id="@+id/textPendingEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:padding="24dp"
+                android:text="@string/pending_approvals_empty"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="6dp"
+                android:text="@string/manage"
+                android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:layoutAnimation="@anim/layout_animation_fall_down">
+
+                <include android:id="@+id/actionDepartments" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionReports" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionAttendanceReports" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionTeacherAttendance" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionAssignmentMonitor" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionQuizMonitor" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionExamResultMonitor" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionResults" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionPromotion" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionCalendar" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionAnnouncements" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionLeave" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionTeacherLeave" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionTimetable" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionExamSchedule" layout="@layout/item_action_card" />
+                <include android:id="@+id/actionMessaging" layout="@layout/item_action_card" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_bottom_nav_floating"
+        android:elevation="10dp"
+        app:itemIconTint="@color/bottom_nav_item_color_admin"
+        app:itemTextColor="@color/bottom_nav_item_color_admin"
+        app:itemActiveIndicatorStyle="@style/Widget.UOS_LMS.BottomNavigation.ActiveIndicator.Admin"
+        app:menu="@menu/menu_admin_bottom_nav" />
+
+</LinearLayout>

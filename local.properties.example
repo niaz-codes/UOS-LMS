@@ -1,0 +1,22 @@
+# Copy this file to local.properties (repo root) and fill in real values.
+# local.properties is gitignored - never commit it, it holds machine-specific paths and
+# real Cloudinary credentials.
+
+# Android Studio normally writes this line automatically on first open of the project.
+# Only set it manually if you're building from the command line without ever opening
+# Android Studio.
+# sdk.dir=C\:\\Users\\<you>\\AppData\\Local\\Android\\Sdk
+
+# Cloudinary credentials - get these from https://console.cloudinary.com/settings/api-keys
+# Optional: the app builds and runs without these (see build.gradle.kts), but any
+# Cloudinary upload (profile photo, assignment/material attachments) will fail until set.
+CLOUDINARY_CLOUD_NAME=<cloud-name>
+CLOUDINARY_API_KEY=<api-key>
+CLOUDINARY_API_SECRET=<api-secret>
+
+# Backend API base URL - optional. Defaults to the deployed production backend (Railway)
+# if omitted, so the app works against real data with zero setup. Override only for local
+# backend development:
+#   http://10.0.2.2:4000/api/   - Android emulator's loopback to this machine's localhost
+#   http://<your-LAN-IP>:4000/api/ - real device on the same WiFi network as your dev server
+# API_BASE_URL=http://10.0.2.2:4000/api/

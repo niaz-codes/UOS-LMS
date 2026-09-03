@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The backend (backend/src) is a plain-HTTP dev server; its LAN host:port is also
+     overridable at runtime from the Login screen's long-press-logo dialog (see
+     ServerConfig/ServerConfigInterceptor), so the reachable host isn't known at build
+     time and can't be scoped to a fixed domain-config allowlist. Android blocks all
+     cleartext (non-TLS) traffic by default starting at targetSdk 28, which otherwise
+     breaks every API call including login with "CLEARTEXT communication ... not permitted". -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

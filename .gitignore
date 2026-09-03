@@ -1,22 +1,40 @@
-# Dependencies
+# ---- Android / Gradle build outputs ----
+*.iml
+.gradle/
+/build
+/captures
+.externalNativeBuild
+.cxx
+/local.properties
+local.properties
+
+# ---- IDE (Android Studio / IntelliJ) - entirely machine/session-local ----
+/.idea/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Node (backend) ----
 node_modules/
 
-# Environment variables (never commit real secrets)
+# ---- Environment variables / secrets - never commit real values ----
 .env
 .env.*
 !.env.example
+atlas-credentials.env
 
-# Logs
-*.log
-npm-debug.log*
-logs/
-
-# OS / editor files
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Firebase Admin SDK service account keys - never commit these; the backend reads the key
-# from FIREBASE_SERVICE_ACCOUNT_JSON in .env instead (see src/config/firebaseAdmin.js).
+# Firebase Admin SDK service account keys (full admin access to the Firebase project) -
+# downloaded from Firebase Console > Project Settings > Service Accounts. Never commit these;
+# the backend reads the key from FIREBASE_SERVICE_ACCOUNT_JSON in .env instead (see
+# backend/src/config/firebaseAdmin.js).
 *firebase-adminsdk*.json
+
+# ---- Logs / local debug artifacts / backups ----
+*.log
+*.bak
+/d[0-9].xml
+/dump*.xml
+
+# ---- Claude Code session-local state ----
+/.claude/

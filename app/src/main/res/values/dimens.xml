@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shared sizing tokens - the app's individual layouts mostly still use raw dp values
+         inline (e.g. app:cardCornerRadius="16dp"/"20dp"/"24dp" scattered per-screen with no
+         single source of truth), which is exactly the "inconsistent" feeling the design pass
+         this file was added for is meant to fix. These tokens are the intended reference point
+         for that per-screen normalization work; the theme's default widget styles (see
+         themes.xml's Widget.UOS_LMS.Card/Button/TextInputLayout) already consume them. -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_corner_radius_large">24dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="button_corner_radius">14dp</dimen>
+    <dimen name="field_corner_radius">12dp</dimen>
+
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+</resources>

@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.uos_lms.feature.auth.presentation.splash.SplashFragment"
+        android:label="Splash" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.uos_lms.feature.auth.presentation.login.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.uos_lms.feature.auth.presentation.register.RegisterFragment"
+        android:label="Register" />
+
+    <fragment
+        android:id="@+id/pendingApprovalFragment"
+        android:name="com.example.uos_lms.feature.auth.presentation.status.PendingApprovalFragment"
+        android:label="Pending Approval" />
+
+    <fragment
+        android:id="@+id/rejectedFragment"
+        android:name="com.example.uos_lms.feature.auth.presentation.status.RejectedFragment"
+        android:label="Rejected" />
+
+    <fragment
+        android:id="@+id/suspendedFragment"
+        android:name="com.example.uos_lms.feature.auth.presentation.status.SuspendedFragment"
+        android:label="Suspended" />
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.example.uos_lms.feature.admin.university.presentation.home.AdminHomeFragment"
+        android:label="Admin Home" />
+
+    <fragment
+        android:id="@+id/adminAttendanceReportsFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.attendance.AdminAttendanceReportsFragment"
+        android:label="Attendance Reports" />
+
+    <fragment
+        android:id="@+id/adminTeacherAttendanceFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.attendance.AdminTeacherAttendanceFragment"
+        android:label="Teacher Attendance" />
+
+    <fragment
+        android:id="@+id/adminAssignmentMonitorFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.assignments.AdminAssignmentMonitorFragment"
+        android:label="Assignment Monitor" />
+
+    <fragment
+        android:id="@+id/adminQuizMonitorFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.quizzes.AdminQuizMonitorFragment"
+        android:label="Quiz Monitor" />
+
+    <fragment
+        android:id="@+id/adminExamResultMonitorFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.examresult.AdminExamResultMonitorFragment"
+        android:label="Exam Result Monitor" />
+
+    <fragment
+        android:id="@+id/adminResultsDepartmentListFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.results.AdminResultsDepartmentListFragment"
+        android:label="Select Department" />
+
+    <fragment
+        android:id="@+id/adminResultsSessionListFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.results.AdminResultsSessionListFragment"
+        android:label="Select Session">
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="departmentName" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminResultsSemesterListFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.results.AdminResultsSemesterListFragment"
+        android:label="Select Semester">
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="sessionId" app:argType="string" />
+        <argument android:name="sessionLabel" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminSemesterResultFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.results.AdminSemesterResultFragment"
+        android:label="View Result">
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="sessionId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+        <argument android:name="semesterLabel" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminStudentSemesterResultFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.results.AdminStudentSemesterResultFragment"
+        android:label="Student Result">
+        <argument android:name="studentId" app:argType="string" />
+        <argument android:name="studentName" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminReportsFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.reports.ReportsFragment"
+        android:label="Reports" />
+
+    <fragment
+        android:id="@+id/adminPromotionFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.promotion.AdminPromotionFragment"
+        android:label="Student Promotion" />
+
+    <fragment
+        android:id="@+id/adminLeaveFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.leave.AdminLeaveFragment"
+        android:label="Leave Applications" />
+
+    <fragment
+        android:id="@+id/adminTeacherLeaveFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.teacherleave.AdminTeacherLeaveFragment"
+        android:label="Teacher Leave Applications" />
+
+    <fragment
+        android:id="@+id/hodLeaveFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.leave.HodLeaveFragment"
+        android:label="Leave Applications" />
+
+    <fragment
+        android:id="@+id/teacherLeaveFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.leave.TeacherLeaveFragment"
+        android:label="Leave Applications" />
+
+    <fragment
+        android:id="@+id/studentLeaveFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.leave.StudentLeaveFragment"
+        android:label="Leave Applications" />
+
+    <fragment
+        android:id="@+id/teacherLeaveApplicationFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.leaveapplication.TeacherLeaveApplicationFragment"
+        android:label="Teacher Leave Application" />
+
+    <fragment
+        android:id="@+id/hodTeacherLeaveFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.teacherleave.HodTeacherLeaveFragment"
+        android:label="Teacher Leave Applications" />
+
+    <fragment
+        android:id="@+id/adminTimetableFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.timetable.AdminTimetableFragment"
+        android:label="Timetable" />
+
+    <fragment
+        android:id="@+id/hodTimetableFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.timetable.HodTimetableFragment"
+        android:label="Timetable" />
+
+    <fragment
+        android:id="@+id/teacherTimetableFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.timetable.TeacherTimetableFragment"
+        android:label="My Timetable" />
+
+    <fragment
+        android:id="@+id/studentTimetableFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.timetable.StudentTimetableFragment"
+        android:label="My Timetable" />
+
+    <fragment
+        android:id="@+id/adminExamScheduleFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.examschedule.AdminExamScheduleFragment"
+        android:label="Exam Schedule" />
+
+    <fragment
+        android:id="@+id/hodExamScheduleFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.examschedule.HodExamScheduleFragment"
+        android:label="Exam Schedule" />
+
+    <fragment
+        android:id="@+id/teacherExamScheduleFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.examschedule.TeacherExamScheduleFragment"
+        android:label="Exam Schedule" />
+
+    <fragment
+        android:id="@+id/studentExamScheduleFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.examschedule.StudentExamScheduleFragment"
+        android:label="Exam Schedule" />
+
+    <fragment
+        android:id="@+id/messagingInboxFragment"
+        android:name="com.example.uos_lms.feature.messaging.presentation.inbox.MessagingInboxFragment"
+        android:label="Messages" />
+
+    <fragment
+        android:id="@+id/newConversationFragment"
+        android:name="com.example.uos_lms.feature.messaging.presentation.compose.NewConversationFragment"
+        android:label="New Conversation" />
+
+    <fragment
+        android:id="@+id/messageThreadFragment"
+        android:name="com.example.uos_lms.feature.messaging.presentation.thread.MessageThreadFragment"
+        android:label="Conversation">
+        <argument android:name="conversationId" app:argType="string" />
+        <argument android:name="otherName" app:argType="string" app:nullable="true" android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/departmentListFragment"
+        android:name="com.example.uos_lms.feature.admin.university.presentation.department.DepartmentListFragment"
+        android:label="Departments" />
+
+    <fragment
+        android:id="@+id/departmentDetailFragment"
+        android:name="com.example.uos_lms.feature.admin.university.presentation.department.DepartmentDetailFragment"
+        android:label="Department Detail">
+        <argument
+            android:name="departmentId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sessionSemesterListFragment"
+        android:name="com.example.uos_lms.feature.admin.university.presentation.session.SessionSemesterListFragment"
+        android:label="Semesters">
+        <argument
+            android:name="departmentId"
+            app:argType="string" />
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/semesterSubjectsFragment"
+        android:name="com.example.uos_lms.feature.admin.university.presentation.semester.SemesterSubjectsFragment"
+        android:label="Semester Subjects">
+        <argument
+            android:name="departmentId"
+            app:argType="string" />
+        <argument
+            android:name="semesterId"
+            app:argType="string" />
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminUsersFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.dashboard.AdminUsersFragment"
+        android:label="Users" />
+
+    <fragment
+        android:id="@+id/adminUserDetailFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.userdetail.AdminUserDetailFragment"
+        android:label="User Detail">
+        <argument
+            android:name="uid"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminStudentTreeFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.usermanagement.student.AdminStudentTreeFragment"
+        android:label="Students" />
+
+    <fragment
+        android:id="@+id/adminStudentSemesterListFragment"
+        android:name="com.example.uos_lms.feature.admin.presentation.usermanagement.student.AdminStudentSemesterListFragment"
+        android:label="Students">
+        <argument
+            android:name="departmentId"
+            app:argType="string" />
+        <argument
+            android:name="sessionId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hodDashboardFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.dashboard.HodDashboardFragment"
+        android:label="HOD Dashboard" />
+
+    <fragment
+        android:id="@+id/hodTeachersFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.teachers.HodTeachersFragment"
+        android:label="Teachers" />
+
+    <fragment
+        android:id="@+id/hodStudentsFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.students.HodStudentsFragment"
+        android:label="Students" />
+
+    <fragment
+        android:id="@+id/hodAttendanceReportsFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.attendance.HodAttendanceReportsFragment"
+        android:label="Attendance Reports" />
+
+    <fragment
+        android:id="@+id/hodAttendanceManagementFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.attendance.HodAttendanceManagementFragment"
+        android:label="Attendance Management" />
+
+    <fragment
+        android:id="@+id/markTeacherAttendanceFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.attendance.MarkTeacherAttendanceFragment"
+        android:label="Mark Teacher Attendance">
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+        <argument android:name="dateKey" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hodTeacherAttendanceReportsFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.attendance.HodTeacherAttendanceReportsFragment"
+        android:label="Teacher Attendance Reports" />
+
+    <fragment
+        android:id="@+id/hodReportsFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.reports.HodReportsFragment"
+        android:label="Department Reports" />
+
+    <fragment
+        android:id="@+id/hodAssignmentMonitorFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.assignments.HodAssignmentMonitorFragment"
+        android:label="Assignment Monitor" />
+
+    <fragment
+        android:id="@+id/hodQuizMonitorFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.quizzes.HodQuizMonitorFragment"
+        android:label="Quiz Monitor" />
+
+    <fragment
+        android:id="@+id/hodExamResultApprovalsFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.examresult.HodExamResultApprovalFragment"
+        android:label="Exam Result Approvals" />
+
+    <fragment
+        android:id="@+id/hodResultsFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.results.HodResultsFragment"
+        android:label="Results" />
+
+    <fragment
+        android:id="@+id/hodResultsSessionListFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.results.HodResultsSessionListFragment"
+        android:label="Select Session">
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="departmentName" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hodResultsSemesterListFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.results.HodResultsSemesterListFragment"
+        android:label="Select Semester">
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="sessionId" app:argType="string" />
+        <argument android:name="sessionLabel" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hodSemesterResultFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.results.HodSemesterResultFragment"
+        android:label="View Result">
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="sessionId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+        <argument android:name="semesterLabel" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hodStudentSemesterResultFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.results.HodStudentSemesterResultFragment"
+        android:label="Student Result">
+        <argument android:name="studentId" app:argType="string" />
+        <argument android:name="studentName" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/hodRepeatExamApprovalFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.repeatexam.HodRepeatExamApprovalFragment"
+        android:label="Repeat Exam Review" />
+
+    <fragment
+        android:id="@+id/hodSemesterSubjectsFragment"
+        android:name="com.example.uos_lms.feature.hod.presentation.semester.HodSemesterSubjectsFragment"
+        android:label="Semester Subjects">
+        <argument
+            android:name="departmentId"
+            app:argType="string" />
+        <argument
+            android:name="semesterId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherDashboardFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.dashboard.TeacherDashboardFragment"
+        android:label="Teacher Dashboard" />
+
+    <fragment
+        android:id="@+id/teacherExamResultWorkspaceFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.examresult.workspace.TeacherExamResultWorkspaceFragment"
+        android:label="Exam Result" />
+
+    <fragment
+        android:id="@+id/teacherStudentsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.students.TeacherStudentsFragment"
+        android:label="Students" />
+
+    <fragment
+        android:id="@+id/teacherAttendanceReportsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.attendance.TeacherAttendanceReportsFragment"
+        android:label="Attendance Reports" />
+
+    <fragment
+        android:id="@+id/teacherReportsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.reports.TeacherReportsFragment"
+        android:label="Reports" />
+
+    <fragment
+        android:id="@+id/teacherSubjectAttendanceFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.attendance.TeacherSubjectAttendanceFragment"
+        android:label="Attendance">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/markAttendanceFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.attendance.MarkAttendanceFragment"
+        android:label="Mark Attendance">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+        <argument android:name="dateKey" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherSubjectAssignmentsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.assignment.TeacherSubjectAssignmentsFragment"
+        android:label="Assignments">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createAssignmentFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.assignment.CreateAssignmentFragment"
+        android:label="Create Assignment">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/assignmentSubmissionsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.assignment.AssignmentSubmissionsFragment"
+        android:label="Submissions">
+        <argument android:name="assignmentId" app:argType="string" />
+        <argument android:name="title" app:argType="string" />
+        <argument android:name="maxMarks" app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherSubjectQuizzesFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.quiz.TeacherSubjectQuizzesFragment"
+        android:label="Quizzes and Exams">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createQuizFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.quiz.CreateQuizFragment"
+        android:label="Create Quiz">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizAttemptsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.quiz.QuizAttemptsFragment"
+        android:label="Attempts">
+        <argument android:name="quizId" app:argType="string" />
+        <argument android:name="title" app:argType="string" />
+        <argument android:name="totalMarks" app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherSubjectMaterialsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.material.TeacherSubjectMaterialsFragment"
+        android:label="Study Material">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherExamResultFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.examresult.TeacherExamResultFragment"
+        android:label="Exam Result Entry">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="departmentId" app:argType="string" />
+        <argument android:name="semesterId" app:argType="string" />
+        <argument android:name="subjectCode" app:argType="string" />
+        <argument android:name="subjectTitle" app:argType="string" />
+        <argument android:name="creditHours" app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherRepeatExamFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.repeatexam.TeacherRepeatExamFragment"
+        android:label="Repeat Exam Marks">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="subjectCode" app:argType="string" />
+        <argument android:name="subjectTitle" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teacherResultsFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.results.TeacherResultsFragment"
+        android:label="Results" />
+
+    <fragment
+        android:id="@+id/teacherOwnAttendanceFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.attendance.TeacherOwnAttendanceFragment"
+        android:label="My Attendance" />
+
+    <fragment
+        android:id="@+id/teacherSubjectResultFragment"
+        android:name="com.example.uos_lms.feature.teacher.presentation.results.TeacherSubjectResultFragment"
+        android:label="View Result">
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="subjectTitle" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentDashboardFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.dashboard.StudentDashboardFragment"
+        android:label="Student Dashboard" />
+
+    <fragment
+        android:id="@+id/studentAttendanceFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.attendance.StudentAttendanceFragment"
+        android:label="Attendance" />
+
+    <fragment
+        android:id="@+id/studentSubjectAttendanceFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.attendance.StudentSubjectAttendanceFragment"
+        android:label="Attendance">
+        <argument android:name="subjectId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentSubmissionsFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.submissions.StudentSubmissionsFragment"
+        android:label="Submissions" />
+
+    <fragment
+        android:id="@+id/studentSubjectAssignmentsFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.assignment.StudentSubjectAssignmentsFragment"
+        android:label="Assignments">
+        <argument android:name="subjectId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/submitAssignmentFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.assignment.SubmitAssignmentFragment"
+        android:label="Assignment">
+        <argument android:name="assignmentId" app:argType="string" />
+        <argument android:name="subjectId" app:argType="string" />
+        <argument android:name="maxMarks" app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentSubjectQuizzesFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.quiz.StudentSubjectQuizzesFragment"
+        android:label="Quizzes and Exams">
+        <argument android:name="subjectId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/takeQuizFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.quiz.TakeQuizFragment"
+        android:label="Quiz">
+        <argument android:name="quizId" app:argType="string" />
+        <argument android:name="subjectId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentSubjectMaterialsFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.material.StudentSubjectMaterialsFragment"
+        android:label="Study Material">
+        <argument android:name="subjectId" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentResultsFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.results.StudentResultsFragment"
+        android:label="Results" />
+
+    <fragment
+        android:id="@+id/studentSemesterResultFragment"
+        android:name="com.example.uos_lms.feature.student.presentation.results.StudentSemesterResultFragment"
+        android:label="View Result" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.uos_lms.feature.profile.presentation.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.uos_lms.feature.profile.presentation.settings.SettingsFragment"
+        android:label="Settings" />
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.uos_lms.feature.notifications.NotificationsFragment"
+        android:label="Notifications" />
+
+    <fragment
+        android:id="@+id/notificationSettingsFragment"
+        android:name="com.example.uos_lms.feature.notifications.NotificationSettingsFragment"
+        android:label="Notification Settings" />
+
+    <fragment
+        android:id="@+id/announcementsFragment"
+        android:name="com.example.uos_lms.feature.announcement.presentation.AnnouncementsFragment"
+        android:label="Announcements" />
+
+    <fragment
+        android:id="@+id/academicCalendarFragment"
+        android:name="com.example.uos_lms.feature.calendar.presentation.AcademicCalendarFragment"
+        android:label="Academic Calendar" />
+
+</navigation>

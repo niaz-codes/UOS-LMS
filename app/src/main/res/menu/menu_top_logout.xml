@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionRefresh"
+        android:icon="@drawable/ic_refresh"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/actionThemeToggle"
+        android:icon="@drawable/ic_light_mode"
+        android:title="@string/action_theme_toggle_title"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/actionNotifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/notifications_title"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/actionLogout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout"
+        app:showAsAction="always" />
+</menu>
