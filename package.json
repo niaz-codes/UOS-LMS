@@ -1,0 +1,31 @@
+{
+  "name": "uos-lms-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UOS_LMS backend API (Node.js + Express + MongoDB Atlas)",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js",
+    "seed:admin": "node src/scripts/seedAdmin.js",
+    "seed:test-data": "node src/scripts/seedTestData.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "firebase-admin": "^14.2.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "nodemailer": "^6.10.1"
+  }
+}
